@@ -4,7 +4,6 @@ NAME: S.Archana
 REG.NO: 212223040019
 DATE: 18.9.2024
 ```
-
  ## Aim: To Interface a 16X2 LCD display to ARM controller  , and simulate it in Proteus 
 ## Components required: STM32 CUBE IDE, Proteus 8 simulator .
 ## Theory 
@@ -116,10 +115,8 @@ C2
 Jump to second line, position 2
  
 ## Procedure:
- 1. click on STM 32 CUBE IDE, the following screen will appear.
-
- 2. click on FILE, click on new stm 32 project 
-
+1. click on STM 32 CUBE IDE, the following screen will appear.
+2. click on FILE, click on new stm 32 project 
 3. select the target to be programmed  as shown below and click on next 
 4.select the program name 
 5. corresponding ioc file will be generated automatically 
@@ -138,11 +135,8 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
 16. click on debug and simulate using simulation as shown below 
 ## CIRCUIT DIAGRAM 
 ![image](https://user-images.githubusercontent.com/36288975/233857974-bda6200e-4f88-4e7b-b189-4da80210fa23.png)
-
-
 ## STM 32 CUBE PROGRAM :
 ```
-
 #include "main.h"
 #include "lcd.h"
 Lcd_PortType ports[] = {GPIOA,GPIOA,GPIOA,GPIOA};
@@ -150,11 +144,8 @@ Lcd_PortType ports[] = {GPIOA,GPIOA,GPIOA,GPIOA};
   Lcd_HandleTypeDef lcd;
 
 void lcd_display(void);
-
-
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-
 int main(void)
 {
   HAL_Init();
@@ -164,9 +155,7 @@ lcd = Lcd_create(ports,pins,GPIOB,GPIO_PIN_0,GPIOB,GPIO_PIN_1,LCD_4_BIT_MODE);
   while (1)
   {
 	  lcd_display();
-
   }
-
 }
 
 void lcd_display()
@@ -176,7 +165,6 @@ void lcd_display()
 
 	Lcd_cursor(&lcd,1,1);
 	Lcd_string(&lcd,"212223040019\n");
-
 }
 void SystemClock_Config(void)
 {
@@ -228,10 +216,8 @@ void Error_Handler(void)
   __disable_irq();
   while (1)
   {
-  }
-  
+  }  
 }
-
 #ifdef  USE_FULL_ASSERT
 void assert_failed(uint8_t *file, uint32_t line)
 {
@@ -239,15 +225,9 @@ void assert_failed(uint8_t *file, uint32_t line)
 #endif 
 
 ```
-
-
-
-
 ## Output screen shots of proteus  :
 ![Screenshot 2024-09-18 105739](https://github.com/user-attachments/assets/86ed8eed-d060-40b9-ae5f-17632c1ce0d2)
  ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE):
- ![Screenshot 2024-09-18 105813](https://github.com/user-attachments/assets/291b091f-7f66-4d34-bdfc-63ab2372967f)
- 
+ ![Screenshot 2024-09-18 105813](https://github.com/user-attachments/assets/291b091f-7f66-4d34-bdfc-63ab2372967f) 
 ## Result :
 Interfacing a lcd display with ARM microcontroller are simulated in proteus and the results are verified.
-
